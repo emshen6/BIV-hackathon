@@ -7,6 +7,10 @@ from torch.utils.data import Dataset, DataLoader
 from tqdm import tqdm
 from nltk.corpus import stopwords
 from pymorphy3 import MorphAnalyzer
+import gdown
+import os
+import zipfile
+
 
 nltk.download('stopwords')
 stop_words = set(stopwords.words('russian'))
@@ -40,6 +44,19 @@ data.columns = ['id', 'date', 'sum', 'text']
 
 data['text'] = data['text'].apply(preprocess_text)
 data['text'] = data['text'].apply(remove_single_letters)
+
+model_path = "./ruBert_tiny"
+if not os.path.exists(model_path):
+    url = "https://drive.google.com/file/d/1gWDHP381W1Sy-TOTLphdap029gsQHyO3/view?usp=sharing"
+    output = "rubert_model.zip"
+    gdown.download(url, output, quiet=False, fuzzy=True)
+
+    print("Extracting files...")
+    with zipfile.ZipFile(output, 'r') as zip_ref:
+        zip_ref.extractall("./")
+
+    os.remove(output)
+    print("Model files downloaded and extracted successfully!")
 
 model = AutoModelForSequenceClassification.from_pretrained("./ruBert_tiny", num_labels=9)
 tokenizer = AutoTokenizer.from_pretrained("./ruBert_tiny")
