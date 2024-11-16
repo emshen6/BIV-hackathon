@@ -10,6 +10,7 @@ from pymorphy3 import MorphAnalyzer
 import gdown
 import os
 import zipfile
+import nltk
 
 
 nltk.download('stopwords')
