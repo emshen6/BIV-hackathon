@@ -139,4 +139,4 @@ if __name__ == "__main__":
         batch_size=64,
         device=torch.device('cpu')
     )
-    pipeline.run_pipeline(input_path="./payments_main.tsv", output_path="submission.tsv")
+    pipeline.run_pipeline(input_path="./payments_main.tsv", output_path="./submission.tsv")
