@@ -16,4 +16,4 @@ docker ps -a
 docker cp <id_контейнера>:/copium/submission.tsv ./
 ```
 
-Модель ruBert-tiny finetunned: ['Google Drive'](https://drive.google.com/file/d/1gWDHP381W1Sy-TOTLphdap029gsQHyO3)
+Модель ruBert-tiny finetunned: [Google Drive](https://drive.google.com/file/d/1gWDHP381W1Sy-TOTLphdap029gsQHyO3)
