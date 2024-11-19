@@ -48,3 +48,4 @@ docker cp <id_контейнера>:/copium/submission.tsv ./
 ```
 
 Модель ruBert-tiny fine-tunned: [Google Drive](https://drive.google.com/file/d/1gWDHP381W1Sy-TOTLphdap029gsQHyO3)
+EDA и выбор модели: [Kaggle](https://www.kaggle.com/code/olgaparfenova/biv-case-1)
